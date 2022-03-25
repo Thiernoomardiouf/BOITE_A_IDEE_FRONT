@@ -18,16 +18,8 @@ const Formulaire = (props) => {
 
     const handleSbmit = (e) => {
         e.preventDefault();
-        axios.post("https://box-ideas.herokuapp.com/api/ideas",
-            {titre:titre, description:contenuSaisi, statut:true},
-            {
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'X-Requested-With': 'XMLHttpRequest',
-                }
-            }
-        )
-        window.location.reload(false);
+        axios.post("https://box-ideas.herokuapp.com/api/ideas",{title:titre, description:contenuSaisi, status:false}).then((response)=>console.log(response.data))
+        // window.location.reload(false);
     }
 
     return(
