@@ -41,20 +41,9 @@ import axios from "axios";
 const Card = ({idee}) => {
     const [status, setStatus] = useState(idee.status);
 
-    const handleValidClick = () => {
-        axios.put(
-            `https://box-ideas.herokuapp.com/api/ideas/status/${idee.id}`,
-            {status: true}
-        )
-        .then( () => setStatus(true))
-    }
-    const handleUndoClick = () => {
-        axios.put(
-            `https://box-ideas.herokuapp.com/api/ideas/status/${idee.id}`,
-            {status: false}
-        )
-        
-        .then( () => setStatus(false))
+    const change_status = () => {
+        axios.put(`https://box-ideas.herokuapp.com/api/ideas/status/${idee.id}`)
+        .then( (response) => setStatus(response.data.status))
     }
     
   return (
@@ -75,13 +64,13 @@ const Card = ({idee}) => {
                     id={"approuve"}
                     className="bi bi-check-circle text-success card-link btn"
                     style={{fontSize: "2rem"}}
-                    onClick={handleValidClick}
+                    onClick={change_status}
                 ></i>
                 <i
                     id={"desapprouve"}
                     className="bi bi-x-circle card-link btn"
                     style={{fontSize: "2rem", color: "#ce0033"}}
-                    onClick={handleUndoClick}
+                    onClick={change_status}
                 ></i>
             </div>
         </div>
