@@ -31,7 +31,8 @@ const Formulaire = (props) => {
     }
 
     return(
-        <form onSubmit={handleSbmit}>
+        <div className='d-flex justify-center-start align-items-center'>
+        <form onSubmit={handleSbmit} className='col-6'>
             <div className="mb-3">
                 <label htmlFor="titre" className="form-label">Titre</label>
                 <input type="text" className="form-control" name="titre" placeholder="Ex : Brief......" aria-describedby="titreHelp" onChange={handleChangeTitre} />
@@ -45,6 +46,10 @@ const Formulaire = (props) => {
             </div>
             <button type="submit" id="btn-suggestion" className="btn btn-danger float-end" style={{backgroundColor: "#ce0033"}}>Envoyer </button>
         </form>
+        <div className="col-6">
+            <img src="fille.svg" className="img-fluid" alt="image de deum-deumlou" />
+        </div>
+        </div>
     );
 }
 

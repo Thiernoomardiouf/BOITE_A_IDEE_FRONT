@@ -3,9 +3,9 @@ import { Fragment } from 'react/cjs/react.development';
 
 const Header = () => {
     return (
-        <Fragment>
+        <h1>
             BOÎTE À IDÉES
-        </Fragment>
+        </h1>
     );
 };
 
