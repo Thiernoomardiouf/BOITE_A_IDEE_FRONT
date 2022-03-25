@@ -3,7 +3,7 @@ import StyledCard from './style/carte';
 import axios from "axios";
 
 
-const Carte = ({idee}) => {
+const Card = ({idee}) => {
     const [status, setStatus] = useState(idee.status);
 
     const handleValidClick = () => {
@@ -54,4 +54,4 @@ const Carte = ({idee}) => {
   )
 }
 
-export default Carte
+export default Card
